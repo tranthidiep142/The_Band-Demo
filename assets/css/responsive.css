@@ -1,0 +1,87 @@
+/* PC min-width: 1024px*/
+@media (min-width: 64em){
+    
+}
+
+/* TABLET (min-width:720px) and (max-width: 1023px)*/
+@media (min-width: 46.25em) and (max-width: 63.9375em){
+    
+}
+
+/* TABLET && MOBILE max-width: 1023px */
+@media (max-width: 63.9375em){
+
+}
+
+/* MOBILE */
+@media (max-width: 46.1875em){
+    .s-full-btn{
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    .s-col-full{
+        width: 100% !important;
+    }
+    /*  */
+    #header{
+    /* khi đối tượng con vượt quá nó thì cho hidden */
+
+    /* ở moblie khi menu: block thì all nav chọc xuống khỏi header>>cho ẩn trc>> but lỗi:chọn more k mở sub-nav trên pc... */
+    /* để ở responsive mobile mới đúng?? */
+        overflow: hidden;
+    }
+
+    #header .nav-search{
+        display: none;
+    }
+
+    /* phải đặt mạnh hơn #header .mobile-menu-btn để display:block > none ở style.css*/
+    #header #mobile-menu{
+        display: block;
+    }
+
+    /* viết ở styles.css */
+    /* #header .mobile-menu-btn{
+        position: absolute;
+        top: 0;
+        right: 0;
+    } */
+
+    #nav{
+        display: block;
+    }
+
+    #nav > li {
+        display: block;
+    }
+
+    #nav > li:first-child{
+        display: inline-block;
+    }
+
+    #nav li a{
+        padding: 1px 24px;
+    }
+
+    #nav .subnav{
+        /* trở về mặc định, bỏ absolute */
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a{
+        color: #fff;
+        /* thụt vào cho giống menu con && dày lên để dễ bấm */
+        padding: 5px 40px;
+    }
+
+    /* content */
+
+    #content .member-img{
+        /* trên mobile nên làm % vì tùy vào màn hình to nhỏ */
+        width: 60%;
+    }
+    
+
+}

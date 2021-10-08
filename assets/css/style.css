@@ -1,0 +1,442 @@
+
+/* reset css */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.clear{
+    clear: both;
+}
+/* dùng chung */
+.text-white{
+    color: #fff !important;
+}
+.text-center{
+    text-align: center !important;
+}
+
+.mt--8{
+    margin-top: -8px;
+}
+
+.pb-8{
+    padding-bottom: 8px !important; 
+}
+.mt-16{
+    margin-top: 16px !important;
+}
+
+.row{
+    margin: 0 -8px;
+}
+.row::after{
+    content: "";
+    /* phải có display mới clear đc */
+    display: block;
+    clear: both;
+}
+
+.col{
+    float: left;
+    padding: 0 8px 16px;
+}
+.col-3{
+    width: 33.333%;
+}
+.col-2{
+    width: 50%;
+}
+.col-1{
+    width: 100%;
+}
+
+/* main */
+#main {
+
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    height: 46px;
+    background-color: #000;
+    z-index: 1;
+    /* responsive */
+    /* khi đối tượng con vượt quá nó thì cho hidden */
+    /* ở moblie khi menu: block thì all nav chọc xuống khỏi header>>cho ẩn trc>> but lỗi:chọn more k mở sub-nav trên pc... */
+    /* để ở responsive mobile mới đúng */
+    /* overflow: hidden; */
+}
+
+#nav{
+    display: inline-block;
+}
+
+#nav > li{
+    display: inline-block;
+    position: relative;
+}
+
+#nav > li > a{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav li a{
+    text-decoration: none;
+    /* chữ nằm giữa */
+    line-height: 46px;
+    /* padding làm rộng khoảng cách trên dưới 0, trái phải 24px */
+    padding: 0 24px;  
+    /* tag a mặc định inline, k css đc ngang dọc>> khi hover chỉ bôi đen phần content>>css block or inline-block */
+    display: block;
+}
+
+#nav .subnav{
+    display: none;
+    /* trên pc mới cần cần position còn mobile k>>responsive trên mobile */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    
+    background-color: #fff;
+    list-style-type: none;
+    min-width: 160px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#nav li:hover .subnav{
+    display: block;
+}
+
+#nav .subnav li:hover a{
+    color: #000;
+    background-color: #ccc;
+}
+
+
+#nav > li:hover > a{
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav .subnav a{
+    color: #000;
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+#nav .nav-arrow-down{
+    font-size: 12px;
+}
+
+/* phải đặt mạnh hơn #header .mobile-menu-btn để display: none>inline-block */
+#header #mobile-menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
+#header .nav-search{
+    /* k cần display??? >> ở trên sẽ k cần manh hơn */
+    display: inline-block;
+    float: right;
+    /* icon nằm bên phải header*/
+    color: #fff;
+    font-size: 16px;
+    line-height: 46px;
+    padding: 0 21px;
+    /* cursor: pointer; khi kc css #header .nav-search:hover thì có thể ghi ở đây, khỏi tạo ra để css*/
+}
+
+#header .mobile-menu-btn:hover{
+    color: #000;
+    background-color: #ccc;
+}
+#header .nav-search:hover{
+    cursor: pointer; /*thay đổi icon con trỏ chuột*/
+    background-color: #f44336;
+}
+
+#slider {
+    margin-top: 46px;
+    padding-top: 50%;
+    /* ../ là nhảy ra ngoài 1 bậc, từ style ra css */
+    background: url('../img/img1.jpg') top center / cover no-repeat;
+    
+    position: relative;
+}
+
+#slider .text-content{
+    position: absolute;
+    color: #ccc;
+    bottom: 47px;
+    text-align: center; /* ND can giua so voi o content chu kp ND can giua trang */
+    width: 100%; /* ND can giua trang */
+}
+
+#slider .text-heading{
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+#slider .text-description{
+    font-size: 15px;
+    text-shadow: 0 0 1px #000;
+}
+
+#content {
+
+}
+
+#content .content-section{
+    /* khi width<800 thì hiển thị 100% màn hình */
+    max-width: 100%;
+
+    /* ND chuyển dịch ở giữa trang*/
+    width: 800px; /* thiếu dòng này k ở giữa đc */
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 74px 0;
+
+    /* responsive */
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+#content .content-heading{
+    text-align: center;
+    font-size: 30px;
+
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+#content .content-sub-heading{
+    text-align: center;
+    margin: 25px 0;
+    font-size: 15px;
+    font-style: italic;
+    opacity: 0.6; /* độ trong suốt of chữ ~ thuộc tính màu chữ*/
+}
+
+#content #About{
+    font-size: 15px;
+    text-align: justify;
+    line-height: 1.4; /*khoảng cách dòng: tiếng anh 1.4 t.việt 1.6*/
+}
+
+#content .member-item{
+    /* đã đưa vào col-3
+    float: left;
+    width: calc(100%/3);
+    width: 33.33333%; 3 ảnh cách đều nhau */
+    text-align: center;
+}
+
+#content #members-list{
+    padding: 48px 0;
+}
+
+#content .member-name{
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+#content .member-img{
+    /* thẻ img quy định width khỏi qđ height, chiều còn lại tự căn theo tỉ lệ */
+    width: 154px;
+    border-radius: 8px;
+}
+
+/* tour section */
+.tour-section{
+    background-color: #000;
+}
+
+/* tour-section: list */
+.tour-section .tickets-list{
+    background-color: #fff;
+    list-style-type: none;
+    
+    font-size: 15px;
+}
+
+.tickets-list li{
+    color: #757575;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tickets-list .sold-out{
+    color:#fff;
+    background-color: #f44336;
+    padding: 4px 5px;
+    margin-left: 16px;
+}
+
+.tickets-list .quantity{
+    float: right;
+    color: #fff;
+    background-color: #000;
+    /* padding: 4px 6px; làm nv k tròn k đẹp*/
+
+    width: 24px;
+    height: 24px;
+    text-align: center; /* căn giữa trái-phải*/
+    line-height: 24px; /* căn giữa trên-dưới*/
+    
+    border-radius: 50%;
+
+    margin-top: -3px; /* có float nên có thể dùng margin âm để đưa hình tròn lên giữa dòng của thẻ li thứ 3*/
+}
+
+/* tour-section: places */
+
+.tour-section .places-list{
+    padding: 32px 0;
+    /* margin: 0 -8px; đưa vào .row */
+}
+
+/* can xóa luôn .place-item */
+/* .tour-section .place-item{
+    đưa vào col-3 
+    width: 33.3333%;
+
+    đưa vào .col
+    float: left;
+    padding: 0 8px 16px;
+} */
+
+.tour-section .place-img{
+    width: 100%;
+    /* giữa ảnh và ND bên dưới có 1 khoảng đen do inline..>> sửa lại block */
+    display: block;
+}
+
+.tour-section .place-img:hover{
+    opacity: 0.6;
+}
+
+.tour-section .place{
+    background-color: #fff;
+    padding: 0 16px 26px;
+    font-size: 15px;
+}
+
+.tour-section h3{
+    font-weight: 550;
+    padding: 15px 0;
+}
+
+.tour-section .time{
+    color: #757575;
+    padding-bottom: 15px;
+}
+
+.tour-section .description{
+    line-height: 1.4;
+    padding-bottom: 25px;
+}
+
+.tour-section a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 10px 16px;
+}
+
+.tour-section .place a:hover{
+    color: #000;
+    background-color: #ccc;
+}
+
+/* contact-section */
+.contact-section {
+    padding: 32px 0;
+}
+
+.contact-section .contact-info{
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.contact-section .contact-info a:hover{
+    opacity: 0.5;
+}
+
+.contact-info i[class*="ti-"]{
+    width: 30px;
+    /* do thẻ i đang là block nên k thể css width>>thêm vào dòng này */
+    display: inline-block;
+}
+
+.contact-section .contact-form{
+    font-size: 15px;
+}
+
+.contact-section .form-control{
+    padding: 8px;
+    border: 1px solid #ccc;
+
+    width: 100%;
+}
+
+.contact-form .submit-button{
+    color: #ddd;
+    background-color: #000;
+    padding: 8px 16px;
+    border: none;
+    float: right;
+}
+
+.contact-form .submit-button:hover{
+    color: #000;
+    background-color: #ccc;
+
+}
+#content .map{
+    width: 100%;
+}
+
+#footer {
+    text-align: center;
+    padding: 64px;
+}
+
+.socials-list a{
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+
+.copyright a:hover,
+.socials-list a:hover{
+    opacity: 0.4;
+}
+.copyright{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+}
+.copyright a{
+    color: rgba(0, 0, 0, 0.6);
+}
+
+
+
